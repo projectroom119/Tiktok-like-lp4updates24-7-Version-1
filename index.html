@@ -96,19 +96,17 @@
       }
     </style>
 
-<!-- TikTok Pixel Code Start -->
-<script>
-!function (w, d, t) {
-  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
-var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
-;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
-
-
-  ttq.load('D2JMTCJC77U0CGBH7JA0');
-  ttq.page();
-}(window, document, 'ttq');
-</script>
-<!-- TikTok Pixel Code End -->
+    <!-- TikTok Pixel Base Code -->
+    <script>
+      !function (w, d, t) {
+        w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+        var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+        ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+        ttq.load('D2JMTCJC77U0CGBH7JA0'); 
+        ttq.page();
+      }(window, document, 'ttq');
+    </script>
+    <!-- TikTok Pixel End -->
 
   </head>
   <body>
@@ -130,14 +128,15 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     </div>
 
     <div class="cta">
-      <!-- Replace with your links -->
       <a
+        id="whatsapp-btn"
         class="whatsapp"
         href="https://whatsapp.com/channel/0029Vb6jI8fBA1es2MhPzJ2c"
         target="_blank"
         >💬 Join WhatsApp Channel</a
       >
       <a
+        id="telegram-btn"
         class="telegram"
         href="https://t.me/UPDATES24_7_TG_CHANNEL"
         target="_blank"
@@ -146,5 +145,45 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     </div>
 
     <footer>© 2025 UPDATES24/7 — All Rights Reserved.</footer>
+
+    <!-- TikTok CTA Tracking -->
+    <script>
+      // Track page view (ViewContent)
+      ttq.track('ViewContent', {
+        contents: [{
+          content_id: "updates247_landing",
+          content_type: "page",
+          content_name: "Landing Page"
+        }],
+        value: 0,
+        currency: "USD"
+      });
+
+      // Track WhatsApp button click
+      document.getElementById("whatsapp-btn").addEventListener("click", function() {
+        ttq.track('ClickButton', {
+          contents: [{
+            content_id: "whatsapp_cta",
+            content_type: "button",
+            content_name: "Join WhatsApp Channel"
+          }],
+          value: 0,
+          currency: "USD"
+        });
+      });
+
+      // Track Telegram button click
+      document.getElementById("telegram-btn").addEventListener("click", function() {
+        ttq.track('ClickButton', {
+          contents: [{
+            content_id: "telegram_cta",
+            content_type: "button",
+            content_name: "Join Telegram Channel"
+          }],
+          value: 0,
+          currency: "USD"
+        });
+      });
+    </script>
   </body>
 </html>
